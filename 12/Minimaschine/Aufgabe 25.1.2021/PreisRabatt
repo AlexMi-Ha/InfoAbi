@@ -1,0 +1,17 @@
+#Speicher
+LOADI 190
+STORE 100
+
+#Programm
+LOAD 100
+#SUBI 200   # if preis > 200   
+
+# CMP speichert keinen Wert im Akku sondern setzt nur Z und N flags
+CMP 200 # CMP ändert den akku nicht subi schon
+
+#Jump schaut sich dann die Flags an und springt anhand diesen
+JLE endewenn 
+LOAD 100
+SUBI 10
+STORE 100
+endewenn: HOLD

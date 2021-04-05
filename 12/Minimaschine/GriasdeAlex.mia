@@ -1,0 +1,12 @@
+#Speicherbelegung
+LOADI 13
+STORE 100
+
+#Term
+LOAD 100
+SUBI 10
+JLE ende
+LOAD 100
+SUBI 2
+STORE 101
+ende: HOLD

@@ -1,0 +1,17 @@
+LOAD n
+STORE i
+
+loop: LOAD i
+JLE end
+ADD result
+STORE result
+LOAD i 
+SUBI 1
+STORE i
+JMP loop
+
+end: HOLD
+
+n: WORD 10
+i: WORD 0
+result: WORD 0

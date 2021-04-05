@@ -1,0 +1,31 @@
+LOAD jahr
+
+mod400: 
+DIVI 400 
+MULI 400
+CMP jahr
+JNE mod100
+LOADI 1	    #result auf 1 setzen, da das jahr durch 400 teilbar ist
+STORE result
+JMP end
+
+mod100:
+LOAD jahr
+DIVI 100
+MULI 100
+CMP jahr   
+JEQ end
+
+mod4:
+LOAD jahr
+DIVI 4
+MULI 4
+CMP jahr
+JNE end
+LOADI 1
+STORE result
+
+end: HOLD
+
+jahr: WORD 2197
+result: WORD 0

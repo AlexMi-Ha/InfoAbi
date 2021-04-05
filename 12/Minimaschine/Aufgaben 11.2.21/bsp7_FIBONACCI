@@ -1,0 +1,21 @@
+
+loop: LOAD i
+CMP n
+JGE end
+LOAD result
+STORE temp
+ADD prev
+STORE result
+LOAD temp
+STORE prev
+LOAD i
+ADDI 1
+STORE i
+JMP loop
+end:HOLD
+
+i: WORD 1
+n: WORD 8  # natürliche Zahl n>0
+result: WORD 1
+prev: WORD 0
+temp: WORD 0

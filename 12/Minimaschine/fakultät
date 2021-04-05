@@ -1,0 +1,18 @@
+LOAD input
+JLE end
+STORE temp
+LOADI 1
+STORE result
+loop: LOAD temp
+JLE end
+MUL result
+STORE result
+LOAD temp
+SUBI 1
+STORE temp
+JMP loop
+end: HOLD
+
+input: WORD 4   # Zahl Zwischen 0 und 7
+result: WORD 0
+temp: WORD 0

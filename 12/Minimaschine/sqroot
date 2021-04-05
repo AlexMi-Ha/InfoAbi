@@ -1,0 +1,41 @@
+# Gearbeitet wird nach folgendem Algrorithmus um die Wurzel zu bestimmen
+#
+# int sqroot(int n) {
+#    int result = n;
+#    for(int i = 0; i < (n/2); ++i) {
+#        result = (result + n / result) / 2;
+#    }
+#    return result;
+#}
+
+
+# result = n
+LOAD n	
+STORE result
+
+# for(int temp = 0; temp < (n/2); ++temp)
+loop: LOAD n
+DIVI 2	    
+CMP temp
+JLT end
+
+# result = (result + n/result) / 2
+LOAD n
+DIV result
+ADD result
+DIVI 2
+STORE result
+
+# Für for loop: temp inkrementieren und zum anfang vom Loop springen
+LOAD temp
+ADDI 1	    
+STORE temp
+JMP loop
+
+end:HOLD
+
+
+# Variablen
+n: WORD 16        # n > 0
+result: WORD 0
+temp:WORD 0
